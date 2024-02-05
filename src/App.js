@@ -21,9 +21,10 @@ export class App extends Component {
   }
 
 
-  componentDidMount (){
-    this.getData();
-  }
+
+  // componentDidMount (){
+  //   this.getData();
+  // }
 
   getData = ()=>{
     this.setState({
@@ -40,7 +41,7 @@ export class App extends Component {
 
   saveForm = () =>{
     if((this.state.name == "") || (this.state.empId == "") || (this.state.city == "") || (this.state.gender == "")){
-      this.setState({err_msg : 'All fields are mandatory'});
+      this.setState({err_msg : '*All fields are mandatory'});
     }
     else{
       const obj = {
@@ -89,9 +90,9 @@ export class App extends Component {
           />
 
         <InputFeild
-            label = "empId"
+            label = "Employee ID"
             name = 'empId'
-            type ="text" 
+            type ="number" 
             placeholder = 'Enter Employee ID'
             value={this.state.value} 
             onChange={this.handleChange}
